@@ -1,4 +1,4 @@
-<wrapper class="block max-w-5xl mx-auto mt-12 px-6">
+<wrapper class="block max-w-2xl mx-auto mt-12 px-6">
     <div class="block w-full relative z-50 mb-4">
         <a class="flex items-center justify-end cursor-pointer" >
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell"
@@ -13,100 +13,60 @@
         </a>
     </div>
 
-<chatwindow class="grid grid-cols-3 h-[40rem] shadow-2xl rounded-2xl">
-    <div class="col-span-1 bg-white rounded-l-2xl p-2 overflow-y-auto">
-        <ul id="conversations-list" class="divide-y mt-2" >
-            <li>
-                <a href="" class="con_selected flex hover:bg-slate-100 px-2 py-4 cursor-pointer">
-                    <img class="w-10 h-10 object-cover rounded-full mr-1" src="https://img.icons8.com/small/96/A9A9A9/happy.png">
-                    <div class="w-fit">
-                        <span class="font-bold">pete</span>
-                        <div class="mr-3 text-sm text-gray-400"> 
-                            Yea sure! Cu later!
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="flex hover:bg-slate-100 px-2 py-4 cursor-pointer">
-                    <img class="w-10 h-10 object-cover rounded-full mr-1" src="https://img.icons8.com/small/96/A9A9A9/happy.png">
-                    <div class="w-fit">
-                        <span>
-                            <icon class="h-2 w-2 bg-sky-500 rounded-full inline-block"></icon>
-                        </span>
-                        <span class="font-bold">cavin</span>
-                        <div class="mr-3 text-sm text-gray-400"> 
-                            Free this weekend?
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="" class="flex hover:bg-slate-100 px-2 py-4 cursor-pointer">
-                    <img class="w-10 h-10 object-cover rounded-full mr-1" src="https://img.icons8.com/small/96/A9A9A9/happy.png">
-                    <div class="w-fit">
-                        <span>
-                            <icon class="h-2 w-2 bg-sky-500 rounded-full inline-block"></icon>
-                        </span>
-                        <span class="font-bold">lisa</span>
-                        <div class="mr-3 text-sm text-gray-400"> 
-                            Can't wait for Friday!
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+    <chatwindow class="h-[40rem] flex flex-col bg-gray-800 rounded-2xl shadow-2xl relative overflow-y-auto">
 
-    </div>
-    <div id='conversation' class="flex flex-col col-span-2 bg-gray-800 rounded-r-2xl relative overflow-y-auto">
-
-        <div class="sticky top-0 z-20 flex-none p-2 bg-gray-900">
-            <div class="flex items-center rounded-xl px-2 py-2">
-                <img class="w-10 h-10 object-cover rounded-full mr-1" src="https://img.icons8.com/small/96/A9A9A9/happy.png">
-                <div class="w-fit">
-                    <span class="font-bold hover:underline text-white">pete</span>
-                </div>
-            </div>
-        </div>
-        <ul id='inbox_messages' class="flex flex-col justify-end grow gap-2 p-4 ">
+        <div class="flex justify-center text-green-400 bg-gray-800 p-3">3 online</div>
+        <ul id='chat_messages' class="flex flex-col justify-end grow gap-2 p-4 ">
                 <li class="flex justify-end">
-                    <div class="bg-green-200 rounded-l-lg rounded-br-lg p-4 max-w-[75%]">
-                        <span>Hey! How are you doing?</span>
+                    <div class="bg-green-200 rounded-l-lg rounded-tr-lg p-4 max-w-[75%]">
+                        <span>Hi, how is everybody?</span>
                     </div>
-                    <div data-testid="tail-out" data-icon="tail-out" class="color-white">
-                        <svg height="13" width="8" version="1.1" >
-                            <path fill="#bbf7d0" d="M5.188,0H0v11.193l6.467-8.625C7.526,1.156,6.958,0,5.188,0z"></path>
+                    <div class="flex items-end">
+                        <svg height="13" width="8" >
+                            <path fill="#bbf7d0" d="M6.3,10.4C1.5,8.7,0.9,5.5,0,0.2L0,13l5.2,0C7,13,9.6,11.5,6.3,10.4z"/>
                         </svg>
                     </div>
                 </li>
-                <li class="flex justify-start relative">
-                    <span data-testid="tail-out" data-icon="tail-out" class="color-white">
-                        <svg height="13" width="8" version="1.1" >
-                            <path fill="white" d="M1.533,2.568L8,11.193V0L2.812,0C1.042,0,0.474,1.156,1.533,2.568z"></path>
-                        </svg>
-                    </span>
-                    <div class="bg-white p-4 max-w-[75%] rounded-r-lg rounded-bl-lg">
-                        <span>I'm doing alright. How about you?</span>
+                <li>
+                    <div class="flex justify-start relative">
+                        <div class="flex items-end" >
+                            <a href="">
+                                <img class="w-8 h-8 rounded-full object-cover" src="https://pbs.twimg.com/profile_images/508601156767997952/fFTdKUf2_400x400.jpeg">
+                            </a>
+                        </div>
+                        <div class="flex items-end" >
+                            <svg height="13" width="8" >
+                                <path fill="white" d="M2.8,13L8,13L8,0.2C7.1,5.5,6.5,8.7,1.7,10.4C-1.6,11.5,1,13,2.8,13z""></path>
+                            </svg>
+                        </div>
+                        <div class="bg-white p-4 max-w-[75%] rounded-r-lg rounded-tl-lg">
+                            <span>Not bad at all. I had a lovely day so far!</span>
+                        </div>  
+                    </div>
+                    <div class="text-sm font-light pb-1 ml-8">
+                        <span class="text-white">Bart</span> 
+                        <span class="text-gray-400">@bart</span>
                     </div>
                 </li>
-                <li class="flex justify-end">
-                    <div class="bg-green-200 rounded-l-lg rounded-br-lg p-4 max-w-[75%]">
-                        <span>All good! Wanna go to the movies tonight?</span>
+                <li>
+                    <div class="flex justify-start relative">
+                        <div class="flex items-end" >
+                            <a href="">
+                                <img class="w-8 h-8 rounded-full object-cover" src="https://cdn.dribbble.com/userupload/12910688/file/original-d33b34f28a79a4b085edec17d83870ba.png">
+                            </a>
+                        </div>
+                        <div class="flex items-end" >
+                            <svg height="13" width="8" >
+                                <path fill="white" d="M2.8,13L8,13L8,0.2C7.1,5.5,6.5,8.7,1.7,10.4C-1.6,11.5,1,13,2.8,13z""></path>
+                            </svg>
+                        </div>
+                        <div class="bg-white p-4 max-w-[75%] rounded-r-lg rounded-tl-lg">
+                            <span>Wonderful!</span>
+                        </div>  
                     </div>
-                    <div data-testid="tail-out" data-icon="tail-out" class="color-white">
-                        <svg height="13" width="8" version="1.1" >
-                            <path fill="#bbf7d0" d="M5.188,0H0v11.193l6.467-8.625C7.526,1.156,6.958,0,5.188,0z"></path>
-                        </svg>
-                    </div>
-                </li>
-                <li class="flex justify-start relative">
-                    <span data-testid="tail-out" data-icon="tail-out" class="color-white">
-                        <svg height="13" width="8" version="1.1" >
-                            <path fill="white" d="M1.533,2.568L8,11.193V0L2.812,0C1.042,0,0.474,1.156,1.533,2.568z"></path>
-                        </svg>
-                    </span>
-                    <div class="bg-white p-4 max-w-[75%] rounded-r-lg rounded-bl-lg">
-                        <span>Yea sure! Cu later!</span>
+                    <div class="text-sm font-light pb-1 ml-8">
+                        <span class="text-white">Lilly</span> 
+                        <span class="text-gray-400">@lilly</span>
                     </div>
                 </li>
 
@@ -119,6 +79,5 @@
             </div>
         </div>
         
-    </div>
-</chatwindow>
+    </chatwindow>
 </wrapper>
