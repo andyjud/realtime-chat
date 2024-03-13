@@ -49,3 +49,19 @@ class ChatmessageCreateForm(ModelForm):
 .message-animation {
     animation: fadeInAndUp 0.6s ease;
 }
+
+
+
+### Javascript chat.html ###
+
+{% block javascript %}
+<script>
+
+    function scrollToBottom() {
+        const container = document.getElementById('chat_container');
+        container.scrollTop = container.scrollHeight;
+    }
+    scrollToBottom()
+
+</script>
+{% endblock %}
