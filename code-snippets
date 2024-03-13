@@ -1,4 +1,5 @@
-### models.py
+### models.py ###
+
 from django.contrib.auth.models import User
 
 class ChatGroup(models.Model):
@@ -7,8 +8,7 @@ class ChatGroup(models.Model):
     def __str__(self):
         return self.group_name
 
-    
-    
+
 class GroupMessage(models.Model):
     group = models.ForeignKey(ChatGroup, related_name='chat_messages', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,4 +20,21 @@ class GroupMessage(models.Model):
 
     class Meta:
         ordering = ['-created']
+
+
+
+
+### forms.py ###
+
+from django.forms import ModelForm
+from django import forms
+from .models import *
+
+class ChatmessageCreateForm(ModelForm):
+    class Meta:
+        model = GroupMessage
+        fields = ['body']
+        widgets = {
+            'body' : forms.TextInput(attrs={'placeholder': 'Add message ...', 'class': 'p-4 text-black', 'maxlength' : '100', 'autofocus': True }),
+        } 
 
