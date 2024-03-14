@@ -19,6 +19,7 @@ application = ProtocolTypeRouter({
 
 
 
+
 ### routing.py ###
 
 from django.urls import path
@@ -29,6 +30,8 @@ websocket_urlpatterns = [
 ]
 
 
+
+
 ### consumers.py ###
 
 from channels.generic.websocket import WebsocketConsumer
@@ -36,3 +39,14 @@ from channels.generic.websocket import WebsocketConsumer
 class ChatroomConsumer(WebsocketConsumer):
     def connect(self):
         self.accept()
+
+
+
+
+### settings.py ###
+
+CHANNEL_LAYERS = {
+    'default': {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    }
+}
