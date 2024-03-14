@@ -40,13 +40,13 @@ class ChatmessageCreateForm(ModelForm):
 
 
 
-### CSS chat_message_x.html ###
+### CSS chat_message_inc.html ###
 
 @keyframes fadeInAndUp {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0px); }
 }
-.message-animation {
+.fade-in-up {
     animation: fadeInAndUp 0.6s ease;
 }
 
