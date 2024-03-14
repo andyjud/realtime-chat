@@ -50,3 +50,13 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
     }
 }
+
+
+
+### consumers.py ####
+
+from asgiref.sync import async_to_sync
+
+async_to_sync(self.channel_layer.group_add)(
+    self.chatroom_name, self.channel_name
+)
