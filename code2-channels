@@ -60,3 +60,21 @@ from asgiref.sync import async_to_sync
 async_to_sync(self.channel_layer.group_add)(
     self.chatroom_name, self.channel_name
 )
+
+
+
+
+### online_count.html ###
+
+<span id="online-count" hx-swap-oob="outerHTML" class="count-animation pr-1" >
+    {{ online_count }} 
+    <style>
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0px); }
+        }
+        .count-animation {
+            animation: fadeInDown 0.4s ease;
+        }
+    </style>
+</span>
