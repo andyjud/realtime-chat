@@ -40,7 +40,7 @@ class ChatmessageCreateForm(ModelForm):
 
 
 
-### CSS chat_message_inc.html ###
+### Fade in CSS Animation ###
 
 <style>
     @keyframes fadeInAndUp {
@@ -54,7 +54,7 @@ class ChatmessageCreateForm(ModelForm):
 
 
 
-### Javascript chat.html ###
+### Scroll down Javascript ###
 
 {% block javascript %}
 <script>
