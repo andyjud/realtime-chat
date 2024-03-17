@@ -19,18 +19,6 @@ application = ProtocolTypeRouter({
 
 
 
-### routing.py ###
-
-from django.urls import path
-from . import consumers
-
-websocket_urlpatterns = [
-    path("ws/chatroom/<chatroom_name>", consumers.ChatroomConsumer.as_asgi()),
-]
-
-
-
-
 ### consumers.py ###
 
 from channels.generic.websocket import WebsocketConsumer
