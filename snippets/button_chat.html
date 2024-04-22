@@ -1,0 +1,3 @@
+{% if profile.user != user %} 
+<a class="button" href="{% url 'start-chat' profile.user.username %}">Chat with me</a>
+{% endif %}

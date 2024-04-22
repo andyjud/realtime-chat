@@ -1,0 +1,29 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+
+    <div class="my-4">
+    <h2>Members</h2>
+    {% for member in chat_group.members.all %}
+    <div class="flex justify-between items-center">
+        <div class="flex items-center gap-2 py-2">
+            <img class="w-14 h-14 rounded-full object-cover" src="{{ member.profile.avatar }}" />
+            <div>
+                <span class="font-bold">{{ member.profile.name }}</span> 
+                <span class="text-sm font-light text-gray-600">@{{ member.username }}</span>
+            </div>
+        </div>
+        
+        {% if member != chat_group.admin %}
+        <div class="inline-block pr-4">
+            <input type="checkbox" name="remove_members" value="{{ member.id }}" class="relative p-5 cursor-pointer appearance-none rounded-md border after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('https://img.icons8.com/ffffff/32/multiply.png')] after:bg-center checked:bg-red-500 hover:ring hover:ring-gray-300 focus:outline-none" />
+        </div>
+        {% endif %}
+    </div> 
+    {% endfor %}
+    </div>
+
+    <button class="mt-2" type="submit">Update</button>
+</form>
+
+<a href="" class="inline-block flex justify-end mt-4 text-gray-400 hover:text-red-500" >Delete Chatroom</a>
