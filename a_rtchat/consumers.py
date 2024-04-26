@@ -71,5 +71,9 @@ class ChatroomConsumer(WebsocketConsumer):
         
     def online_count_handler(self, event):
         online_count = event['online_count']
-        html = render_to_string("a_rtchat/partials/online_count.html", {'online_count' : online_count})
+        context = {
+            'online_count' : online_count,
+            'chat_group' : self.chatroom
+        }
+        html = render_to_string("a_rtchat/partials/online_count.html", context)
         self.send(text_data=html) 
