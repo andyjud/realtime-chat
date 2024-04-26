@@ -1,4 +1,13 @@
 {% for chatroom in user.chat_groups.all %}
+    {% if chatroom.groupchat_name %}
+    <li>
+        <a class="leading-5 text-right" href="{% url 'chatroom' chatroom.group_name %}">
+            {{ chatroom.groupchat_name|slice:":30" }}
+        </a>
+    </li>
+    {% endif %}
+{% endfor %}
+{% for chatroom in user.chat_groups.all %}
     {% if chatroom.is_private %}
         {% for member in chatroom.members.all %}
             {% if member != user %}
