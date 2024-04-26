@@ -1,0 +1,15 @@
+{% extends 'layouts/box.html' %}
+
+{% block content %} 
+
+<h1>Delete this chatroom?</h1>
+
+<h2>"{{ chat_group.groupchat_name }}"</h2>
+
+<form method='POST'>
+    {% csrf_token %}
+    <button type="submit" class="button-red mt-4">Yes, delete</button>
+    <a class="button button-gray ml-1" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+</form>
+
+{% endblock %}
