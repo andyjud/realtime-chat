@@ -1,0 +1,56 @@
+<div id="online-user-count">
+    {% if online_users %}
+    <span class="bg-red-500 rounded-lg pt-1 pb-2 px-2 text-white text-sm ml-4">
+    {{ online_users.count }} online
+    </span>
+    {% endif %}
+</div>
+
+
+<div id="online-in-chats">
+    {% if online_in_chats %}
+    <div class="green-dot absolute top-2 right-2 z-20"></div>
+    {% endif %}
+</div>
+
+
+<ul id="chats-list" class="hoverlist [&>li>a]:justify-end">
+    <li class="relative">
+        {% if public_chat_users %}
+        <div class="green-dot absolute top-1 left-1"></div>
+        {% else %}
+        <div class="graylight-dot absolute top-1 left-1"></div>
+        {% endif %}
+        <a href="{% url 'home' %}">Public Chat</a>
+    </li>
+    {% for chatroom in user.chat_groups.all %}
+    {% if chatroom.groupchat_name %}
+    <li class="relative">
+        {% if chatroom.users_online.all and user not in chatroom.users_online.all or chatroom.users_online.count > 1 %}
+            <div class="green-dot absolute top-1 left-1"></div>
+        {% else %}
+            <div class="graylight-dot absolute top-1 left-1"></div>
+        {% endif %}    
+        <a class="leading-5 text-right" href="{% url 'chatroom' chatroom.group_name %}">
+            {{ chatroom.groupchat_name|slice:":30" }}
+        </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% for chatroom in user.chat_groups.all %}
+        {% if chatroom.is_private %}
+            {% for member in chatroom.members.all %}
+                {% if member != user %}
+                <li class="relative">
+                    {% if chatroom.users_online.all and user not in chatroom.users_online.all or chatroom.users_online.count > 1 %}
+                        <div class="green-dot absolute top-1 left-1"></div>
+                    {% else %}
+                        <div class="graylight-dot absolute top-1 left-1"></div>
+                    {% endif %}
+                    <a href="{% url 'chatroom' chatroom.group_name %}">{{ member.profile.name }}</a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}    
+</ul>
