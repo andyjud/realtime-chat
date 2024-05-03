@@ -14,7 +14,10 @@
     <div class="flex justify-start">
         <div class="flex items-end mr-2" >
             <a href="{% url 'profile' message.author.username %}">
-                <img class="w-8 h-8 rounded-full object-cover" src="{{ message.author.profile.avatar }}">
+                <div class="relative">
+                    <div id="user-{{ message.author.id }}"></div>
+                    <img class="w-8 h-8 rounded-full object-cover" src="{{ message.author.profile.avatar }}">
+                </div>
             </a>
         </div>
         <div class="flex items-end" >
