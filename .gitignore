@@ -1,8 +1,0 @@
-venv/
-node/
-media/
-migrations/
-__pycache__/
-db.sqlite3
-.env
-.DS_Store
